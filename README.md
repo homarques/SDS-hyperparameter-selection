@@ -7,7 +7,7 @@ MATLAB implementation of the paper ["Hyperparameter selection of one-class suppo
 
 ## Importing libraries
 
-This implementation is built on the [PrTools](http://prtools.tudelft.nl/) and [dd_tools](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/intelligent-systems/pattern-recognition-bioinformatics/pattern-recognition-laboratory/data-and-software/dd-tools/) libraries, both libraries can be imported using MATLAB commands ```addpath```:
+This implementation is built on the [PrTools](http://prtools.tudelft.nl/) and [dd_tools](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/intelligent-systems/pattern-recognition-bioinformatics/pattern-recognition-laboratory/data-and-software/dd-tools/) libraries, both libraries can be imported using the MATLAB command ```addpath```:
 
 ```addpath('prtools');``` </br>
 ```addpath('dd_tools');```
