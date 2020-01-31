@@ -19,7 +19,6 @@ This implementation is built on the [PrTools](http://prtools.tudelft.nl/) and [d
 ![Synthetic dataset](/Figs/original.png)
 
 
-
 ## Generating pseudo binary datasets
 
 ### SDS
@@ -33,3 +32,19 @@ It is already implemented on ```dd_tools``` by the command:<br/>
 ```uniform_objects = gendatout(data, 2000);```
 
 ![Uniform objects pseudo binary dataset](/Figs/uo.png)
+
+
+## Optimizing SVDD hyperparameters
+```params = {};``` <br/>
+```params{1} = [0 0.05];``` */Fraction of the target data rejected (misclassified)* <br/>
+```params{2} = linspace(0.5, 8, 6);``` */Parameter of the radial kernel (sigma), from 0.5 to 8, 6 values equally spaced* <br/>
+
+## Evaluating each combination of parameters
+
+### Training SVDD
+```w = svdd(data, params{1}(1), params{2}(2));```
+
+### SDS
+
+
+### Uniform Object Generation
