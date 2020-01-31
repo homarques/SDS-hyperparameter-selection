@@ -36,15 +36,25 @@ It is already implemented on ```dd_tools``` by the command:<br/>
 
 ## Optimizing SVDD hyperparameters
 ```params = {};``` <br/>
-```params{1} = [0 0.05];``` */Fraction of the target data rejected (misclassified)* <br/>
-```params{2} = linspace(0.5, 8, 6);``` */Parameter of the radial kernel (sigma), from 0.5 to 8, 6 values equally spaced* <br/>
+```params{1} = [0 0.05];``` * %Fraction of the target data rejected (misclassified)* <br/>
+```params{2} = linspace(0.5, 8, 6);``` * %Parameter of the radial kernel (sigma), 6 values equally spaced from 0.5 to 8* <br/>
 
 ## Evaluating each combination of parameters
 
 ### Training SVDD
-```w = svdd(data, params{1}(1), params{2}(2));```
+```w = svdd(data, params{1}(1), params{2}(1));```
 
 ### SDS
+Testing the classifier on the SDS pseudo binary dataset
+
+#### Error on target class
+	```err_t_sds = dd_error(targets*w);```
+
+#### Error on outlier class
+	```err_o_sds = dd_error(outliers*w);```
+
+#### Classifier error
+	```err_sds = err_t_sds(1) + err_o_sds(2);```
 
 
 ### Uniform Object Generation
