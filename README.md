@@ -80,7 +80,7 @@ end
 #### Classifier error
 ```err_uo = mean(err_t_uo) + err_o_uo(2);```
 
-## Select the classifier with smallest overall error
+## Select the classifier with the smallest overall error
 ### SDS
 ![Best classifier according to SDS](/Figs/sds_classifier.png)
 
