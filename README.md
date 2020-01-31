@@ -62,6 +62,7 @@ Testing the classifier on the Uniform Objects pseudo binary dataset
 
 #### Error on target class (cross-validation)
 ```matlab
+nrfolds = 10;
 err_t_uo = zeros(nrfolds, 1);
 I = nrfolds;
 for j=1:nrfolds
