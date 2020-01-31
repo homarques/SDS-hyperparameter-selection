@@ -61,9 +61,9 @@ Testing the classifier on the SDS pseudo binary dataset
 Testing the classifier on the Uniform Objects pseudo binary dataset
 
 #### Error on target class (cross-validation)
-```err_t_uo = zeros(nrfolds, 1);```<br/>
-```I = nrfolds;```<br/>
 ```matlab
+err_t_uo = zeros(nrfolds, 1);
+I = nrfolds;
 for j=1:nrfolds
     %x - training set, z - test set
     [x,z,I] = dd_crossval(data, I);
