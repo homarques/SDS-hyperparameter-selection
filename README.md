@@ -58,3 +58,24 @@ Testing the classifier on the SDS pseudo binary dataset
 
 
 ### Uniform Object Generation
+Testing the classifier on the Uniform Objects pseudo binary dataset
+
+#### Error on target class (cross-validation)
+```err_t_uo = zeros(nrfolds, 1);```<br/>
+```I = nrfolds;```<br/>
+```for j=1:nrfolds
+		%x - training set, z - test set
+		[x,z,I] = dd_crossval(data, I);
+		%training
+		w1 = svdd(x, thisarg{:});
+		%test
+		err_xval = dd_error(z, w1);
+		err_t_uo(j) = err_xval(1);
+end```
+
+
+#### Error on outlier class
+```err_o_sds = dd_error(outliers*w);```
+
+#### Classifier error
+```err_sds = err_t_sds(1) + err_o_sds(2);```
