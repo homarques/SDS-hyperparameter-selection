@@ -11,3 +11,15 @@ This implementation is built on the [PrTools](http://prtools.tudelft.nl/) and [d
 
 ```addpath('prtools');``` </br>
 ```addpath('dd_tools');```
+
+## Generating synthetic one-class dataset
+```x = gendatb([300, 0]);``` </br>
+```data = gendatoc(x, []);```
+
+![Synthetic dataset](/Figs/original.pdf)
+
+
+
+## Generating pseudo binary datasets
+
+### SDS
