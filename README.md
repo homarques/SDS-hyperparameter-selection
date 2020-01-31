@@ -16,7 +16,7 @@ This implementation is built on the [PrTools](http://prtools.tudelft.nl/) and [d
 ```x = gendatb([300, 0]);``` </br>
 ```data = gendatoc(x, []);```
 
-![Synthetic dataset](/Figs/original.fig)
+![Synthetic dataset](/Figs/original.png)
 
 
 
