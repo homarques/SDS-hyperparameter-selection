@@ -37,7 +37,7 @@ legend('Outliers','Targets', 'Location','northwest');
 %Optimizing SVDD hyperparameters
 params = {};
 params{1} = [0 0.05]; %fracrej
-params{2} = linspace(0.5, 8, 6);%scale_range(data, 8); % sigma
+params{2} = linspace(0.5, 8, 6);% sigma
 
 %Building grid-search
 arg = params{1};
@@ -64,7 +64,7 @@ min_err_uo = 2;
 for i = 1:nrcomb
 	thisarg = arg(i,:)
 	%Training SVDD on the training set, it can be any one-class classifier
-	w = feval('svdd', data, thisarg{:});
+	w = svdd(data, thisarg{:});
 
 	%Testing the classifier on the SDS pseudo binary dataset
 	%Error on target class
@@ -90,7 +90,7 @@ for i = 1:nrcomb
 		%x - training set, z - test set
 		[x,z,I] = dd_crossval(data, I);
 		%training
-		w1 = feval('svdd', x, thisarg{:});
+		w1 = svdd(x, thisarg{:});
 		%test
 		err_xval = dd_error(z, w1);
 		err_t_uo(j) = err_xval(1);
@@ -108,3 +108,15 @@ for i = 1:nrcomb
 		best_w_uo = w;
 	end
 end
+
+%Ploting best classifier according to SDS
+figure;
+scatterd(data);
+plotc(best_w_sds);
+title('Best classifier according to SDS');
+
+%Ploting best classifier according to Uniform Objects
+figure;
+scatterd(data);
+plotc(best_w_uo);
+title('Best classifier according to Uniform Objects');
