@@ -23,11 +23,13 @@ This implementation is built on the [PrTools](http://prtools.tudelft.nl/) and [d
 ## Generating pseudo binary datasets
 
 ### SDS
-```[targets, outliers] = sds(data);``` <br/>
+```[targets, outliers] = sds(data);```
+
 ![SDS pseudo binary dataset](/Figs/sds.png)
 
 ### Uniform Object Generation
 Also generating a pseudo binary dataset based on the paper ["Uniform object generation for optimizing one-class classifiers"](https://dl.acm.org/doi/10.5555/944790.944809) to compare with SDS.<br/>
 It is already implemented on ```dd_tools``` by the command:<br/>
-```uniform_objects = gendatout(data, 2000);```<br/>
+```uniform_objects = gendatout(data, 2000);```
+
 ![Uniform objects pseudo binary dataset](/Figs/uo.png)
